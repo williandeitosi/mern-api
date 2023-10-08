@@ -8,8 +8,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3333;
 
-//config cors
-
 
 const allowedOrigins = ["https://mern-frontend-ivory.vercel.app"]
 
@@ -26,11 +24,7 @@ app.use(cors({
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
-// app.use(cors({
-//   origin: 'https://mern-frontend-ivory.vercel.app', // Substitua pelo seu domínio de frontend
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   credentials: true, // Permite envio de cookies e informações de autenticação
-// }));
+
 
 const TodoItemRouter = require("./routes/todoItems");
 
