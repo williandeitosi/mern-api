@@ -1,8 +1,8 @@
+const TodoItemRouter = require("./routes/todoItems");
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
-const TodoItemRouter = require("./routes/todoItems");
 
 const app = express();
 app.use(express.json());
