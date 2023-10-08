@@ -10,6 +10,15 @@ app.use(express.json());
 const PORT = process.env.PORT || 3333;
 
 
+mongoose
+  .connect(process.env.DB_CONNECT)
+  .then(() => console.log("Database connected"))
+  .catch((err) => console.log(err));
+
+app.listen(PORT, () => console.log(`Server running on port http://${PORT}`));
+
+
+
 const allowedOrigins = ["https://mern-frontend-ivory.vercel.app"]
 
 app.use(cors({
@@ -29,10 +38,4 @@ app.use("/", TodoItemRouter);
 
 
 
-mongoose
-  .connect(process.env.DB_CONNECT)
-  .then(() => console.log("Database connected"))
-  .catch((err) => console.log(err));
-
-app.listen(PORT, () => console.log(`Server running on port http://${PORT}`));
 
