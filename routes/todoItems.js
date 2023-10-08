@@ -13,6 +13,12 @@ router.post("/api/item", async (req, res) => {
   }
 });
 
+// teste
+
+router.get("/", (req, res) =>{
+  res.json("consegui fazer deploy")
+})
+
 router.get("/api/items", async (req, res) => {
   try {
     const allItems = await todoItemsModel.find({});
