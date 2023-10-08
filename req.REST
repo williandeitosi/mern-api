@@ -1,0 +1,33 @@
+POST http://localhost:3333/api/item
+Content-Type: application/json
+
+
+{
+    "item": "teste  item"
+}
+
+
+###
+
+GET http://localhost:3333/api/items
+Content-Type: application/json
+
+
+####
+
+PUT http://localhost:3333/api/item/651b4efc70807d5034afee6d
+Content-Type: application/json
+
+
+{
+    "item": "second item updated!!again"
+}
+
+
+#####
+
+
+DELETE  http://localhost:3333/api/item/651b4efc70807d5034afee6d
+Content-Type: application/json
+
+
