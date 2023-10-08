@@ -15,7 +15,7 @@ mongoose
   .then(() => console.log("Database connected"))
   .catch((err) => console.log(err));
 
-app.listen(PORT, () => console.log(`Server running on port http://${PORT}`));
+
 
 
 
@@ -36,6 +36,6 @@ app.use(cors({
 
 app.use("/", TodoItemRouter);
 
-
+app.listen(PORT, () => console.log(`Server running on port http://${PORT}`));
 
 
