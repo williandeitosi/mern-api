@@ -8,13 +8,20 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3333;
 
-app.use(cors(
-  {
-    origin: ["https://mern-frontend-ivory.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PUT"],
-    credentials: true
-}
-));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://mern-frontend-ivory.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// app.use(cors(
+//   {
+//     origin: ["https://mern-frontend-ivory.vercel.app/"],
+//     methods: ["POST", "GET", "DELETE", "PUT"],
+//     credentials: true
+// }
+// ));
 
 const TodoItemRouter = require("./routes/todoItems");
 
