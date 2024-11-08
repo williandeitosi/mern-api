@@ -2,6 +2,10 @@ const router = require("express").Router();
 
 const todoItemsModel = require("../models/todoItems");
 
+router.get("/", async (req,res)=>{
+  return {message:"foi caralho"}
+})
+
 router.post("/api/item", async (req, res) => {
   try {
     const newItem = new todoItemsModel(req.body);
